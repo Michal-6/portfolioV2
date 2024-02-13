@@ -1,0 +1,157 @@
+@font-face {
+  font-family: lora;
+  src: url(../fonts/Lora-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: manrope;
+  src: url(../fonts/Manrope-VariableFont_wght.ttf);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  color: black;
+  font-family: manrope;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2, h3 {
+  color: black;
+  font-family: manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 12.8px;
+}
+
+h3 {
+  letter-spacing: 2px;
+}
+
+a {
+  color: black;
+  text-align: center;
+  font-family: lora;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+p {
+  color: black;
+  font-family: Lora;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 50px 0 0 0;
+}
+
+body {
+  overflow-y: hidden;
+  display: flex;
+  height: 100vh;
+  padding: 0px 128px;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1500px) {
+  body {
+    /*flex-direction: column;
+    text-align: center;*/
+    justify-content: center;
+  }
+}
+body #description, body #mobile-description {
+  position: sticky;
+  bottom: calc(50% - 140px);
+  top: calc(50% - 140px);
+  display: flex;
+  height: 280px;
+  width: 352px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1500px) {
+  body #description, body #mobile-description {
+    display: none;
+  }
+}
+body #description #description-text, body #mobile-description #description-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  align-self: stretch;
+}
+body #description #description-text #title, body #mobile-description #description-text #title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+body #description #socials, body #mobile-description #socials {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+}
+body #mobile-description {
+  display: none;
+}
+@media screen and (max-width: 1500px) {
+  body #mobile-description {
+    display: block;
+  }
+}
+body #projects {
+  transition: all ease-in 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #projects .project {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-snap-align: center;
+  scroll-behavior: smooth;
+  transition: all 1000ms cubic-bezier(0.925, 0.015, 0.18, 0.97); /* custom */
+  transition-timing-function: cubic-bezier(0.925, 0.015, 0.18, 0.97); /* custom */
+  scale: 0.8;
+  opacity: 0.5;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+}
+body #projects .project h3 {
+  display: none;
+  width: 100%;
+}
+body #projects .project img {
+  width: 700px;
+  height: auto;
+}
+body #projects .active {
+  scale: 1;
+  opacity: 1 !important;
+}/*# sourceMappingURL=style.css.map */
