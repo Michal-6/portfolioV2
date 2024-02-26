@@ -120,17 +120,19 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        //gap: 0px; padding: 40vh 0px;
+        gap: 0px; 
+        //padding: 40vh 0px;
         .project{
             display: flex; flex-direction: column; gap: 8px;
             scroll-snap-align: center;
             scroll-behavior: smooth;
             transition: all 1000ms cubic-bezier(0.925, 0.015, 0.180, 0.970); /* custom */
             transition-timing-function: cubic-bezier(0.925, 0.015, 0.180, 0.970); /* custom */
-            scale: 0.8; opacity: 0.5;
+            scale: 0.8; 
+            opacity: 0.5;
             //height: calc(50vh + 394.59px); 
-            height: 45vh;
-            display: flex; align-items: center;
+            min-height: 60vh;
+            display: flex; align-items: center; justify-content: center;
             h3{
                 display: none;
                 width: 100%;

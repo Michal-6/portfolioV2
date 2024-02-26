@@ -128,6 +128,7 @@ body #projects {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0px;
 }
 body #projects .project {
   display: flex;
@@ -139,9 +140,10 @@ body #projects .project {
   transition-timing-function: cubic-bezier(0.925, 0.015, 0.18, 0.97); /* custom */
   scale: 0.8;
   opacity: 0.5;
-  height: 45vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 body #projects .project h3 {
   display: none;

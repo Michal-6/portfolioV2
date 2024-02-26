@@ -1,6 +1,6 @@
 projects = document.getElementsByClassName('project');
 
-var move = 45;
+var move = 60;
 var moveChange = move;
 var project = document.getElementById('projects');
 project.style.transform = `translateY(${move}vh)`;
