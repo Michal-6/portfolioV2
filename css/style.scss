@@ -11,6 +11,27 @@ $TXT1: black;
 $black50: rgba(0, 0, 0, 0.5);
 $white: white;
 
+#cursor{
+    font-family: manrope;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: all ease-in-out .5s;
+    color: white;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+*{
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
 *{
     box-sizing: border-box; margin: 0;
 }
@@ -77,7 +98,7 @@ body{
         position: sticky; 
         bottom: calc(50% - 140px); top: calc(50% - 140px); 
         display: flex;
-        height: 280px; width: 352px;
+        height: 280px; width: 380px;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -85,6 +106,7 @@ body{
             display: none;
         }
         #description-text{
+            cursor: default;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -92,6 +114,7 @@ body{
             gap: 32px;
             align-self: stretch;
             #title{
+                padding-right: 24px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -101,9 +124,13 @@ body{
         #socials{
             display: flex;
             align-items: center;
-            gap: 64px;
+            gap: 40px;
             align-self: stretch;
         }
+        #socials a:hover{
+            text-decoration: underline;
+        }
+
     }
     #mobile-description{
         display: none;
@@ -114,7 +141,7 @@ body{
     #projects{
         transition: all ease-in .5s;
         //transform-origin: top left;
-        //transform: translateY(594.59px);
+        transform: translateY(60vh);
         //scroll-behavior: smooth;
         display: flex;
         flex-direction: column;
@@ -133,15 +160,41 @@ body{
             //height: calc(50vh + 394.59px); 
             min-height: 60vh;
             display: flex; align-items: center; justify-content: center;
-            h3{
-                display: none;
-                width: 100%;
+            .project-img-wrap{
+                cursor:  default;
+                width: 700px; height: 364px;
+                position: relative;
+                .project-title{
+                    z-index: -1;
+                    position: absolute;
+                    transition: all ease-in-out .5s;
+                    top: 0px;
+                }
+                .project-title-active{
+                    top: -22px;
+                }
+
+                .project-index{
+                    z-index: -1;
+                    position: absolute;
+                    transition: all ease-in-out .5s;
+                    rotate: -90deg;
+                    left: 0px;
+                }
+                .project-index-active{
+                    left: -22px;
+                }
+                img{
+                    cursor: none;
+                    width: 100%; height: 100%;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                }
+
+                .project-desacription{
+                    display: none;
+                }
             }
-            img{
-                width: 700px;
-                height: auto;
             }
-        }
         .active{
             scale: 1; opacity: 1 !important;
         }

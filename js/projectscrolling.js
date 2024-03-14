@@ -1,4 +1,6 @@
-projects = document.getElementsByClassName('project');
+var projects = document.getElementsByClassName('project');
+var projectsDesc = document.getElementsByClassName('project-index');
+var projectsTitle = document.getElementsByClassName('project-title');
 
 var move = 60;
 var moveChange = move;
@@ -13,6 +15,8 @@ addEventListener("wheel", (e) => {});
 onwheel = (e) => {
     console.log("deltaY: " + e.deltaY + ", index: " + index + ", transitionFinished: " + transitionFinished);
     projects[index].classList.remove('active');
+    projectsDesc[index].classList.remove('project-index-active');
+    projectsTitle[index].classList.remove('project-title-active');
     if(transitionFinished == true){
         if(e.deltaY == 100 && index != 2){
             // scrolled down
@@ -33,4 +37,6 @@ onwheel = (e) => {
 
 project.addEventListener('transitionend', function(event) {
     transitionFinished = true;
+    projectsDesc[index].classList.add('project-index-active');
+    projectsTitle[index].classList.add('project-title-active');
 }, false );
