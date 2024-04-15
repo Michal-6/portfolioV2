@@ -1,3 +1,7 @@
+/*
+    - min screen height the website is responsive for is about 620px
+*/
+
 @font-face {
     font-family: lora;
     src: url(../fonts/Lora-VariableFont_wght.ttf);
@@ -18,10 +22,10 @@ $white: white;
     z-index: 10;
     height: 10px;
     width: 10px;
-    background-color: black;
     border-radius: 50%;
     position: absolute;
     transition: all ease-in-out .5s;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
 }
 *::-webkit-scrollbar {
@@ -90,11 +94,49 @@ body{
     align-items: center;
     flex-shrink: 0;
     @media screen and (max-width: 1500px) {
-        /*flex-direction: column;
-        text-align: center;*/
+        padding: 128px;
        justify-content: center;
     }
-    #description, #mobile-description{
+    @media screen and (max-width: 600px) {
+        padding: 64px;
+    }
+    #mobile-description{
+        //display: none;
+        /*position: fixed !important;
+        bottom: 0px; top: 0px !important; 
+        height: 100vh;*/
+        display: flex; flex-direction: column; gap: 32px; text-align: center; align-items: center !important; padding-top: calc(50% - 512px);
+        #description-text{
+            width: 512px;
+            cursor: default;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 36px;
+            align-self: stretch;
+            #title{
+                padding-right: 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: left;
+            }
+        }
+        #socials{
+            width: 100%;
+            color: black;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            align-self: stretch;
+        }
+        #socials a{
+            transition: all ease-in-out .3s;
+            opacity: 0.5;
+        }
+    }
+    #description{
         position: sticky; 
         bottom: calc(50% - 140px); top: calc(50% - 140px); 
         display: flex;
@@ -127,21 +169,27 @@ body{
             gap: 40px;
             align-self: stretch;
         }
+        #socials a{
+            transition: all ease-in-out .3s;
+            opacity: 0.5;
+        }
         #socials a:hover{
-            text-decoration: underline;
+            opacity: 1;
+            color: black;
+            //text-decoration: underline;
         }
 
     }
     #mobile-description{
-        display: none;
+        display: none !important;
         @media screen and (max-width: 1500px) {
-            display: block;
+            display: block !important;
         }
     }
     #projects{
         transition: all ease-in .5s;
         //transform-origin: top left;
-        transform: translateY(60vh);
+        transform: translateY(150vh);
         //scroll-behavior: smooth;
         display: flex;
         flex-direction: column;
@@ -149,9 +197,11 @@ body{
         align-items: center;
         gap: 0px; 
         //padding: 40vh 0px;
+        @media screen and (max-width: 1500px) {
+            width: 100%;
+        }
         .project{
             display: flex; flex-direction: column; gap: 8px;
-            scroll-snap-align: center;
             scroll-behavior: smooth;
             transition: all 1000ms cubic-bezier(0.925, 0.015, 0.180, 0.970); /* custom */
             transition-timing-function: cubic-bezier(0.925, 0.015, 0.180, 0.970); /* custom */
@@ -164,6 +214,10 @@ body{
                 cursor:  default;
                 width: 700px; height: 364px;
                 position: relative;
+                @media screen and (max-width: 1500px) {
+                    width: 100%; height: auto;
+                    max-width: 700px; max-height: 364px;
+                }
                 .project-title{
                     z-index: -1;
                     position: absolute;

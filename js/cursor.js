@@ -4,7 +4,6 @@ var projects = document.getElementsByClassName('project-img');
 var w = 10;
 
 const updateCursorPosition = (event) => {
-    console.log(w);
     cursor.style.top = `${event.clientY-(w/2)}px`;
     cursor.style.left = `${event.clientX-(w/2)}px`;
     cursor.animate({

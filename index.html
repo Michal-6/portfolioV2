@@ -8,7 +8,7 @@
     <script defer src="./js/cursor.js"></script>
     <script defer src="./js/projectscrolling.js"></script>
 </head>
-<body>
+<body onload="checkScreenSize();">
     <span id="cursor"></span>
     <article id="description">
         <div id="description-text">
@@ -21,14 +21,14 @@
             </p>
         </div>
         <div id="socials">
-            <a href="mailto:michalgloncak26@gmail.com" class="social">E-mail</a>
+            <a href="mailto:michalgloncak26@gmail.com" class="social">Email</a>
             <a href="https://github.com/Michal-6" target="_blank" class="social">GitHub</a>
             <a href="https://www.linkedin.com/in/michal-glon%C4%8D%C3%A1k-9a1b9a283/" target="_blank" class="social">LinkedIn</a>
-            <a href="" target="_blank" class="social">Resume</a>
+            <a href="" target="_blank" class="social">Resumé</a>
         </div>
     </article>
     <section id="projects">
-        <article id="mobile-description">
+        <article id="mobile-description" style="" class="">
             <div id="description-text">
                 <div id="title">
                     <h1>Michal Glončák</h1>
@@ -44,31 +44,57 @@
                 <a href="https://www.linkedin.com/in/michal-glon%C4%8D%C3%A1k-9a1b9a283/" target="_blank" class="social">Linkedin</a>
             </div>
         </article>
-
-        <div class="project active">
+        <div id="project1" class="project">
             <div class="project-img-wrap">
-                <h3 class="project-title project-title-active">Designer/Developer Portfolio</h3>
+                <h3 class="project-title project-title-active">Restaurant</h3>
                 <h3 class="project-index project-index-active">01</h3>
-                <a href="https://michal-6.github.io/Space-tourism-/src/index.html" target="_blank">
-                    <img class="project-img" src="./assets/covers/SpaceTourism_cover.png" alt="">
+                <a href="https://michal-6.github.io/HenrysPlate/index.html" target="_blank">
+                    <img class="project-img" src="./assets/covers/restaurant_cover.png" alt="restaurant website cover">
                 </a>
             </div>
         </div>
         <div class="project">
             <div class="project-img-wrap">
-                <h3 class="project-title">Designer/Developer Portfolio</h3>
+                <h3 class="project-title">Developer Portfolio</h3>
                 <h3 class="project-index">02</h3>
-                <a href="" target="_blank">
-                    <img class="project-img" src="./assets/covers/fm-eccomerce.jpg" alt="">
+                <a href="https://michaldev.web.app/" target="_blank">
+                    <img class="project-img" src="./assets/covers/developer_cover.png" alt="developer portfolio website cover">
+                </a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img-wrap">
+                <h3 class="project-title">Space Tourism</h3>
+                <h3 class="project-index">03</h3>
+                <a href="https://michal-6.github.io/Space-tourism-/src/index.html" target="_blank">
+                    <img class="project-img" src="./assets/covers/SpaceTourism_cover.png" alt="space tourism website cover">
                 </a>
             </div>
         </div>
         <div class="project">
             <div class="project-img-wrap">
                 <h3 class="project-title">Designer/Developer Portfolio</h3>
-                <h3 class="project-index">03</h3>
-                <a href="" target="_blank">
-                    <img class="project-img" src="./assets/covers/RFportfolio_cover.png" alt="">
+                <h3 class="project-index">04</h3>
+                <a href="https://michal-6.github.io/RobertFox-Portfolio/" target="_blank">
+                    <img class="project-img" src="./assets/covers/RFportfolio_cover.png" alt="designer/developer portfolio website cover">
+                </a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img-wrap">
+                <h3 class="project-title">Nissan GTR35</h3>
+                <h3 class="project-index">05</h3>
+                <a href="https://michal-6.github.io/NissanGTR35/" target="_blank">
+                    <img class="project-img" src="./assets/covers/nissan_cover.png" alt="nissan GTR35 website cover">
+                </a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img-wrap">
+                <h3 class="project-title">Where In The World?</h3>
+                <h3 class="project-index">06</h3>
+                <a href="https://michal-6.github.io/Rest-countries-api/" target="_blank">
+                    <img class="project-img" src="./assets/covers/Countries_cover.png" alt="where in the world website cover">
                 </a>
             </div>
         </div>

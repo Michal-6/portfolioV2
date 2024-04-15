@@ -1,3 +1,6 @@
+/*
+    - min screen height the website is responsive for is about 620px
+*/
 @font-face {
   font-family: lora;
   src: url(../fonts/Lora-VariableFont_wght.ttf);
@@ -13,10 +16,10 @@
   z-index: 10;
   height: 10px;
   width: 10px;
-  background-color: black;
   border-radius: 50%;
   position: absolute;
   transition: all ease-in-out 0.5s;
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
 }
 
@@ -96,12 +99,56 @@ body {
 }
 @media screen and (max-width: 1500px) {
   body {
-    /*flex-direction: column;
-    text-align: center;*/
+    padding: 128px;
     justify-content: center;
   }
 }
-body #description, body #mobile-description {
+@media screen and (max-width: 600px) {
+  body {
+    padding: 64px;
+  }
+}
+body #mobile-description {
+  /*position: fixed !important;
+  bottom: 0px; top: 0px !important; 
+  height: 100vh;*/
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  align-items: center !important;
+  padding-top: calc(50% - 512px);
+}
+body #mobile-description #description-text {
+  width: 512px;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  align-self: stretch;
+}
+body #mobile-description #description-text #title {
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+body #mobile-description #socials {
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-self: stretch;
+}
+body #mobile-description #socials a {
+  transition: all ease-in-out 0.3s;
+  opacity: 0.5;
+}
+body #description {
   position: sticky;
   bottom: calc(50% - 140px);
   top: calc(50% - 140px);
@@ -113,11 +160,11 @@ body #description, body #mobile-description {
   align-items: center;
 }
 @media screen and (max-width: 1500px) {
-  body #description, body #mobile-description {
+  body #description {
     display: none;
   }
 }
-body #description #description-text, body #mobile-description #description-text {
+body #description #description-text {
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -126,44 +173,53 @@ body #description #description-text, body #mobile-description #description-text 
   gap: 32px;
   align-self: stretch;
 }
-body #description #description-text #title, body #mobile-description #description-text #title {
+body #description #description-text #title {
   padding-right: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
 }
-body #description #socials, body #mobile-description #socials {
+body #description #socials {
   display: flex;
   align-items: center;
   gap: 40px;
   align-self: stretch;
 }
-body #description #socials a:hover, body #mobile-description #socials a:hover {
-  text-decoration: underline;
+body #description #socials a {
+  transition: all ease-in-out 0.3s;
+  opacity: 0.5;
+}
+body #description #socials a:hover {
+  opacity: 1;
+  color: black;
 }
 body #mobile-description {
-  display: none;
+  display: none !important;
 }
 @media screen and (max-width: 1500px) {
   body #mobile-description {
-    display: block;
+    display: block !important;
   }
 }
 body #projects {
   transition: all ease-in 0.5s;
-  transform: translateY(60vh);
+  transform: translateY(150vh);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0px;
 }
+@media screen and (max-width: 1500px) {
+  body #projects {
+    width: 100%;
+  }
+}
 body #projects .project {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  scroll-snap-align: center;
   scroll-behavior: smooth;
   transition: all 1000ms cubic-bezier(0.925, 0.015, 0.18, 0.97); /* custom */
   transition-timing-function: cubic-bezier(0.925, 0.015, 0.18, 0.97); /* custom */
@@ -179,6 +235,14 @@ body #projects .project .project-img-wrap {
   width: 700px;
   height: 364px;
   position: relative;
+}
+@media screen and (max-width: 1500px) {
+  body #projects .project .project-img-wrap {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    max-height: 364px;
+  }
 }
 body #projects .project .project-img-wrap .project-title {
   z-index: -1;
