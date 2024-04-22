@@ -6,10 +6,11 @@ var index = 0;
 var transitionFinished = true;
 
 var projectWrap = document.getElementById('projects');
-var projects = document.getElementsByClassName('project');
-var projectsDesc = document.getElementsByClassName('project-index');
-var projectsTitle = document.getElementsByClassName('project-title');
-//project.style.transform = `translateY(${move}vh) !important;`;
+
+var projects;
+var projectsDesc;
+var projectsTitle;
+
 
 function checkScreenSize() {
   var screenWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
@@ -22,12 +23,24 @@ function checkScreenSize() {
       maxIndex = 6;
       document.getElementById("mobile-description").classList.add('project', 'active');
       document.getElementById("project1").classList.remove("active");
+      console.log("mobile set");
+      projects = document.getElementsByClassName('project');
+      projectsDesc = document.getElementsByClassName('project-index');
+      projectsTitle = document.getElementsByClassName('project-title');
+      projectWrap.style.transform = `translateY(${move}vh)`;
+      console.log(projects);
   } else {
+    // desktop
       move = 150;
       moveChange = move;
       maxIndex = 5;
       document.getElementById("mobile-description").classList.remove('project', 'active');
       document.getElementById("project1").classList.add("active");
+      console.log("desktop set");
+      projects = document.getElementsByClassName('project');
+      projectsDesc = document.getElementsByClassName('project-index');
+      projectsTitle = document.getElementsByClassName('project-title');
+      projectWrap.style.transform = `translateY(${move}vh)`;
   }
 }
 
@@ -50,8 +63,11 @@ function handleScroll(event) {
           moveChange += step;
           index--;
       }
-      projectsDesc[index].classList.remove('project-index-active');
-      projectsTitle[index].classList.remove('project-title-active');
+      console.log("index: " + index);
+      if(index <= 5 || maxIndex == 5){
+        projectsDesc[index].classList.remove('project-index-active');
+        projectsTitle[index].classList.remove('project-title-active');
+      }
 
       projectWrap.style.transform = `translateY(${moveChange}vh)`;
   }
@@ -75,7 +91,9 @@ function transition(){
   setTimeout(() => {
     console.log("transition finished = true");
     transitionFinished = true;
-    projectsDesc[index].classList.add('project-index-active');
-    projectsTitle[index].classList.add('project-title-active');
+    if(index <= 5 || maxIndex == 5){
+      projectsDesc[index-1].classList.add('project-index-active');
+      projectsTitle[index-1].classList.add('project-title-active');
+    }
   }, "500");
 }
