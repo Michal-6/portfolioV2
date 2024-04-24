@@ -45,6 +45,11 @@ h1 {
   font-weight: 700;
   line-height: normal;
 }
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+}
 
 h2, h3 {
   color: black;
@@ -105,22 +110,23 @@ body {
 }
 @media screen and (max-width: 600px) {
   body {
-    padding: 64px;
+    padding: 16px;
   }
 }
 body #mobile-description {
   /*position: fixed !important;
   bottom: 0px; top: 0px !important; 
   height: 100vh;*/
+  max-width: 512px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
   text-align: center;
   align-items: center !important;
-  padding-top: calc(50% - 512px);
 }
 body #mobile-description #description-text {
-  width: 512px;
+  padding-bottom: 32px;
+  width: 100%;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -136,7 +142,7 @@ body #mobile-description #description-text #title {
   justify-content: center;
   align-items: left;
 }
-body #mobile-description #socials {
+body #mobile-description .socials {
   width: 100%;
   color: black;
   display: flex;
@@ -144,7 +150,12 @@ body #mobile-description #socials {
   gap: 40px;
   align-self: stretch;
 }
-body #mobile-description #socials a {
+@media screen and (max-width: 600px) {
+  body #mobile-description .socials {
+    gap: 20px;
+  }
+}
+body #mobile-description .socials a {
   transition: all ease-in-out 0.3s;
   opacity: 0.5;
 }
@@ -180,17 +191,17 @@ body #description #description-text #title {
   justify-content: center;
   align-items: left;
 }
-body #description #socials {
+body #description .socials {
   display: flex;
   align-items: center;
   gap: 40px;
   align-self: stretch;
 }
-body #description #socials a {
+body #description .socials a {
   transition: all ease-in-out 0.3s;
   opacity: 0.5;
 }
-body #description #socials a:hover {
+body #description .socials a:hover {
   opacity: 1;
   color: black;
 }

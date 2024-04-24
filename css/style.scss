@@ -47,6 +47,9 @@ h1{
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @media screen and (max-width: 600px) {
+        font-size: 40px;
+    }
 }
 h2, h3{
     color: $TXT1;
@@ -98,16 +101,19 @@ body{
        justify-content: center;
     }
     @media screen and (max-width: 600px) {
-        padding: 64px;
+        padding: 16px;
     }
     #mobile-description{
         //display: none;
         /*position: fixed !important;
         bottom: 0px; top: 0px !important; 
         height: 100vh;*/
-        display: flex; flex-direction: column; gap: 32px; text-align: center; align-items: center !important; padding-top: calc(50% - 512px);
+        max-width: 512px; width: 100%;
+        display: flex; flex-direction: column;text-align: center; align-items: center !important; //padding-top: 100px !important;
+
         #description-text{
-            width: 512px;
+            padding-bottom: 32px;
+            width: 100%;
             cursor: default;
             display: flex;
             flex-direction: column;
@@ -123,15 +129,18 @@ body{
                 align-items: left;
             }
         }
-        #socials{
+        .socials{
             width: 100%;
             color: black;
             display: flex;
             justify-content: center;
             gap: 40px;
             align-self: stretch;
+            @media screen and (max-width: 600px) {
+                gap: 20px;
+            }
         }
-        #socials a{
+        .socials a{
             transition: all ease-in-out .3s;
             opacity: 0.5;
         }
@@ -163,17 +172,17 @@ body{
                 align-items: left;
             }
         }
-        #socials{
+        .socials{
             display: flex;
             align-items: center;
             gap: 40px;
             align-self: stretch;
         }
-        #socials a{
+        .socials a{
             transition: all ease-in-out .3s;
             opacity: 0.5;
         }
-        #socials a:hover{
+        .socials a:hover{
             opacity: 1;
             color: black;
             //text-decoration: underline;
